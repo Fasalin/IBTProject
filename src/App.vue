@@ -1,30 +1,53 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="container">
+    <nav class="navigation">
+      <div class="nav-wrapper">
+        <router-link class="nav-home-button" to="/">Home</router-link>
+        <div class="nav-right-side-buttons">
+          <router-link to="/">Cart</router-link>
+          <router-link class="nav-profile-button" to="/">Profile</router-link>
+        </div>
+      </div>
+    </nav>
+    <router-view />
   </div>
-  <router-view/>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
-#nav {
-  padding: 30px;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.navigation{
+    width: 100%;
+    font-size: large;
+    height: 50px; 
+    background-color: antiquewhite;   
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.nav-wrapper{
+    margin: 0 auto;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-right-side-buttons{
+    display: flex;
+}
+.nav-right-side-buttons div,
+.nav-home-button{
+    cursor: pointer;
+}
+.nav-profile-button{
+    margin-left: 10%;
+}
+a{
+  text-decoration: none;
+  color: black;
 }
 </style>
